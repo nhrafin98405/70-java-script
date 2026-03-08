@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <fieldset>
+        <legend><h2>STUDENT VALID FORM</h2></legend>
+
+        <form action="#" name="frm">
+
+            name : <br>
+            <input type="text" name="nam"> <br>
+            id : <br>
+            <input type="number" name="id"> <br>
+            email : <br>
+            <input type="email" name="emle"> <br>
+            numbre : <br>
+            <input type="number" name="nmbr"> <br>
+            address : <br>
+            <textarea name="address" id=""></textarea> <br>
+
+            distric; <br>
+            <select name="distric">
+                <option value="dhaka">dhaka</option>
+                <option value="mymensingh">mymensingh</option>
+                <option value="haluaghat">haluaghat</option>
+            </select> <br>
+
+            education: <br>
+            <input type="checkbox" name="edu" value="SSC">SSC
+            <input type="checkbox" name="edu" value="HSC">HSC
+            <input type="checkbox" name="edu" value="MSC">MSC
+
+            <br>
+
+            gender: <br>
+
+            <input type="radio" name="gndr" value="MALE">MALE
+            <input type="radio" name="gndr" value="FEMALE">FEMALE
+            <input type="radio" name="gndr" value="OTHER">OTHER
+
+
+            <br>
+            <br>
+            <br>
+
+            <input type="button" value="submit" onclick="show()">
+            <input type="reset" value="reset">
+
+        </form>
+    </fieldset>
+
+    <script>
+
+        function show(){
+
+            let nm =document.frm.nam.value;
+            let id =document.frm.id.value;
+            let eml =document.frm.emle.value;
+            let nmber =document.frm.nmbr.value;
+            let adrs =document.frm.address.value;
+            let dstrck =document.frm.distric.value;
+
+
+           
+
+            // checkbox 
+
+
+            let education ="";
+
+            let edcn = document.frm.edu;
+
+            for(i=0;i<edcn.length;i++){
+                if(edcn[i].checked){
+                    education += edcn[i].value+" ";
+                }
+            }
+
+            // radio 
+
+
+            let gender = "";
+
+            let gnder = document.frm.gndr;
+
+            let rdo = false;
+
+            for(i=0;i<gnder.length;i++){
+                if(gnder[i].checked){
+                    gender += gnder[i].value;
+                    rdo = true ;
+                }
+            }
+
+            if(!rdo){
+                alert( "please enter the gender");
+                return;
+            }
+
+
+
+            
+            // show 
+
+            let store = window.open("","","height=500px,width=500px");
+
+            store.document.write("NAME : "+nm+"<br>");
+            store.document.write("ID : "+id+"<br>");
+            store.document.write("EMAIL : "+eml+"<br>");
+            store.document.write("NUMBER : "+nmber+"<br>");
+            store.document.write("ADDRESS : "+adrs+"<br>");
+            store.document.write("DISTRIC : "+dstrck+"<br>");
+            store.document.write("DEGREE : "+education+"<br>");
+            store.document.write("GENDER : "+gender+"<br>")
+
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
