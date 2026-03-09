@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <fieldset>
+        <legend><h2>student valid form</h2></legend>
+
+
+        <form action="#" name="frm">
+
+
+           
+            NAME : <br>
+            <input type="text" name="nam"> <br>
+
+            <br>
+           
+
+            EMAIL : <br>
+            <input type="text" name="em"> <br>
+            
+            <br>
+
+            Password : <br>
+            <input type="password" name="pas"> <br>
+            
+            <br>
+            
+
+            COURSE : <br>
+            <input type="checkbox" name="ckbx" value="HTML"> HTML 
+            <input type="checkbox" name="ckbx" value="JavaScript"> JavaScript 
+            <input type="checkbox" name="ckbx" value="PHP"> PHP 
+            
+
+            <br>
+            
+
+            GENDER : <br>
+            <input type="radio" name="gnder" value="Male"> Male
+            <input type="radio" name="gnder" value="Female"> Female
+
+            <br>
+           
+
+            Department : <br>
+            <select name="edu">
+
+                <option value="CSE">CSE</option>
+                <option value="EEE">EEE</option>
+                <option value="BBA">BBA</option>
+
+            </select>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <input type="button" value="submit" onclick="show()"> 
+            <input type="reset" value="reset"> 
+
+        </form>
+    </fieldset>
+
+
+
+
+    <script>
+
+
+        function show(){
+            let nm = document.frm.nam.value;
+
+            let eml = document.frm.em.value;
+
+            let ps = document.frm.pas.value;
+
+            
+            // name 
+
+            if(nm == ""){
+                alert("Enter The Name First");
+                return;
+            }
+
+            // pass 
+
+            if(ps.length <5 || ps.length >8){
+                alert("Enter 5 to 8 degite passoward");
+                return;
+            }
+            
+
+            // email 
+
+            if(eml.indexOf("@")==-1 || eml.indexOf(".")==-1){
+                alert("INVALIDE EMAIL");
+                return;
+            }
+
+            // CHECKBOX 
+
+
+            let ck = "";
+
+            let cb = document.frm.ckbx;
+
+            for(let i=0;i<cb.length;i++){
+                if(cb[i].checked){
+                    ck += cb[i].value+" ";
+                }
+            }
+
+
+            // RADIO 
+
+            let gender = "";
+
+            let gndr = document.frm.gnder;
+
+            let gdc = false;
+
+            for(let i=0;i<gndr.length;i++){
+                if(gndr[i].checked){
+                    gender += gndr[i].value;
+                    gdc = true;
+                }
+            }
+
+            if(!gdc){
+                alert("pleas enter GENDER");
+                return;
+            }
+
+            
+
+            let dep = document.frm.edu.value;
+       
+
+
+        // SHOW 
+
+        let store = window.open("","","width=500px,height=500px");
+
+        store.document.write("NAME : "+ nm +"<br>");
+        store.document.write("EMAIL : "+ eml +"<br>");
+        store.document.write("PASSOWARD : "+ ps +"<br>");
+        store.document.write("COURSE : "+ ck +"<br>");
+        store.document.write("GENDER : "+ gender +"<br>");
+        store.document.write("DEPARTMENT : "+ dep +"<br>");
+
+        store.document.write("<br> <br> <br>")
+        store.document.write("<button onclick='window.close()'>Close</button> ");
+        store.document.write("<button onclick='window.print()'>Print</button>");
+ }
+    </script>
+    
+</body>
+</html>
