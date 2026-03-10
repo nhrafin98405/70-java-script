@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam6</title>
+</head>
+<body>
+
+    <fieldset>
+        <legend><h2>Form validation 6</h2></legend>
+
+        <form action="#" name="frm">
+
+            name : <br>
+            <input type="text" name="name"> <br>
+
+            id : <br>
+            <input type="number" name="id"> <br>
+
+            email : <br>
+            <input type="email" name="email"> <br>
+
+            passward : <br>
+            <input type="password" name="passoward"> <br>
+
+            address : <br>
+            <textarea name="address" ></textarea> <br>
+
+            number : <br>
+            <input type="number" name="number"> <br>
+
+            <br>
+            <br>
+            <br>
+
+            distric : <br>
+            <select name="distric" >
+
+                <option value="Dhaka">Dhaka</option>
+                <option value="Mymensingh">Mymensingh</option>
+                <option value="Haluaghat">Haluaghat</option>
+                <option value="Dhobura">Dhobura</option>
+
+            </select>
+            <br>
+            <br>
+            <br>
+
+            degree : <br>
+            <input type="checkbox" name="degree" value="SSC"> SSC
+            <input type="checkbox" name="degree" value="HSC"> HSC
+            <input type="checkbox" name="degree" value="MSC"> MSC
+            <br>
+            <br>
+
+            Gender : <br>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+            <input type="radio" name="gender" value="Other">Other
+
+            <br>
+            <br>
+            <br>
+
+            <input type="button" value="submit" onclick="show()">
+            <input type="reset" value="reset">
+        </form>
+    </fieldset>
+
+
+    <script>
+
+
+        function show(){
+
+
+            let nam = document.frm.name.value;
+            let idno = document.frm.id.value;
+            let eml = document.frm.email.value;
+            let pass = document.frm.passoward.value;
+            let adrs = document.frm.address.value;
+            let nmbr = document.frm.number.value;
+            let dstrct = document.frm.distric.value;
+
+            // name validation
+
+            if(nam == ""){
+                alert("Fill The Name First");
+                return;
+            }
+
+            // id validation 
+
+            if(idno.length < 7){
+                alert("Enter 7 Degit ID First");
+                return;
+            }
+
+            // email validation 
+
+            if(eml.indexOf("@") ==-1){
+
+                alert("Missing @ On Email");
+                return;
+            }
+            if(eml.indexOf(".com")==-1){
+                alert("Missing .COM On Email");
+                return;
+            }
+
+            // passward validation 
+
+            if(pass.length < 5 || pass.length > 8){
+                alert("Enter 5 To 8 Digit Passward");
+                return;
+            }
+
+            
+
+            // number balidation 
+
+            if(nmbr.length != 11){
+                alert("Enter the 11 digite Number");
+                return;
+            }
+
+            
+
+
+
+
+
+
+
+
+            // show on new tab 
+
+
+            let store = window.open("","","width=500px,height=500px");
+
+            store.document.write("Name : "+ nam +"<br>");
+
+            store.document.write("<br>");
+
+            store.document.write("ID : "+ idno +"<br>");
+            
+            store.document.write("<br>");
+
+            store.document.write("EMAIL : "+ eml +"<br>");
+            
+            store.document.write("<br>");
+
+            store.document.write("Password : "+ pass +"<br>");
+            
+            store.document.write("<br>");
+
+            store.document.write("ADDRESS : "+ adrs +"<br>");
+            
+            store.document.write("<br>");
+
+            store.document.write("NUMBER : "+ nmbr +"<br>");
+            
+            store.document.write("<br>");
+
+            store.document.write("DISTRIC : "+ dstrct +"<br>");
+            
+            store.document.write("<br>");
+
+        }
+    </script>
+    
+</body>
+</html>
