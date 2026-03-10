@@ -84,25 +84,26 @@
             // radio 
 
 
-            let gender = "";
+            // let gender = "";
 
-            let gnder = document.frm.gndr;
+            // let gnder = document.frm.gndr;
 
-            let rdo = false;
+            // let rdo = false;
 
-            for(i=0;i<gnder.length;i++){
-                if(gnder[i].checked){
-                    gender += gnder[i].value;
-                    rdo = true ;
-                }
-            }
+            // for(i=0;i<gnder.length;i++){
+            //     if(gnder[i].checked){
+            //         gender += gnder[i].value;
+            //         rdo = true ;
+            //     }
+            // }
 
-            if(!rdo){
-                alert( "please enter the gender");
-                return;
-            }
+            // if(!rdo){
+            //     alert( "please enter the gender");
+            //     return;
+            // }
 
 
+            const gender = document.querySelector('input[name="gndr"]:checked')?.value ??"not slect";
 
             
             // show 
