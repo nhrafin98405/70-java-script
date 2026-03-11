@@ -85,7 +85,7 @@
 
             // name validation
 
-            if(nam == ""){
+             if(nam == ""){
                 alert("Fill The Name First");
                 return;
             }
@@ -125,7 +125,38 @@
                 return;
             }
 
+            // checkbox validation
+
+            let edu ="";
+            let drg =document.frm.degree;
+
+            for(i = 0 ; i<drg.length; i++){
+
+                if(drg[i].checked){
+                    edu += drg[i].value + " ";
+                }
+            }
+
+           
             
+            // radio validation 
+
+            let gndr ="";
+            let gdr = document.frm.gender;
+            let select = false;
+
+            for(i =0;i<gdr.length;i++){
+                if(gdr[i].checked){
+                    gndr += gdr.value;
+                    select = true;
+                   
+                }
+            }
+
+            if(!select){
+                alert("select the gender");
+                return;
+            }
 
 
 
@@ -164,6 +195,14 @@
             store.document.write("<br>");
 
             store.document.write("DISTRIC : "+ dstrct +"<br>");
+            
+            store.document.write("<br>");
+
+            store.document.write("EDUCATION : "+ edu +"<br>");
+            
+            store.document.write("<br>");
+
+            store.document.write("GENDER : "+ gndr +"<br>");
             
             store.document.write("<br>");
 
