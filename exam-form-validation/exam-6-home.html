@@ -48,16 +48,16 @@
             <br>
 
             degree : <br>
-            <input type="checkbox" name="degree" value="SSC"> SSC
-            <input type="checkbox" name="degree" value="HSC"> HSC
-            <input type="checkbox" name="degree" value="MSC"> MSC
+            <input type="checkbox" name="degre" value="SSC"> SSC
+            <input type="checkbox" name="degre" value="HSC"> HSC
+            <input type="checkbox" name="degre" value="MSC"> MSC
             <br>
             <br>
 
             Gender : <br>
-            <input type="radio" name="gender" value="Male">Male
-            <input type="radio" name="gender" value="Female">Female
-            <input type="radio" name="gender" value="Other">Other
+            <input type="radio" name="gnder" value="Male">Male
+            <input type="radio" name="gnder" value="Female">Female
+            <input type="radio" name="gnder" value="Other">Other
 
             <br>
             <br>
@@ -125,6 +125,37 @@
                 return;
             }
 
+            // checkbox validation  
+
+            let degree = "";
+
+            let deg = document.frm.degre;
+
+            for(let i=0;i<deg.length;i++){
+                if(deg[i].checked){
+                    degree += deg[i].value+ " ";
+                    
+                }
+            }
+
+            // gender validation 
+
+
+            let gender ="";
+            let gdr = document.frm.gnder;
+            let slt = false;
+
+            for(i=0;i<gdr.length;i++){
+                if(gdr[i].checked){
+                    gender += gdr[i].value;
+                    slt = true;
+                }
+            }
+
+            if(!slt){
+                alert("ENTER THE GENDER");
+                return;
+            }
             
 
 
@@ -166,6 +197,12 @@
             store.document.write("DISTRIC : "+ dstrct +"<br>");
             
             store.document.write("<br>");
+
+            store.document.write("DEGREE : "+ degree +"<br>");
+
+            store.document.write("<br>");
+
+            store.document.write("GENDER : "+ gender +"<br>");
 
         }
     </script>
