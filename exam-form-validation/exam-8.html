@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam-8</title>
+
+    <style>
+        .frstyl {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+
+        .fldst {
+            width: 25%;
+            background-color: rgb(11, 16, 16);
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body class="frstyl">
+
+
+    <fieldset class="fldst">
+
+        <legend>exam-8</legend>
+
+        <form name="frm">
+
+            <label>first name</label> <br>
+            <input type="text" name="frstnm">
+            <br>
+            <br>
+            <label>last name</label> <br>
+            <input type="text" name="lstnm">
+            <br>
+            <br>
+            <label>id</label> <br>
+            <input type="number" name="idnmbr">
+            <br>
+            <br>
+            <label>email</label> <br>
+            <input type="text" name="emle">
+            <br>
+            <br>
+            <label>number</label> <br>
+            <input type="number" name="nmbr">
+            <br>
+            <br>
+            <label>passoward</label> <br>
+            <input type="password" name="paswrd">
+            <br>
+            <br>
+            <label>gread</label> <br>
+
+            <input type="radio" name="gndr" value="male">
+            <labe>male</label>
+            <input type="radio" name="gndr" value="femail">
+            <labe>femail</label>
+            <input type="radio" name="gndr" value="other">
+            <labe>other</label>
+                
+            <br>
+            <br>
+            <label>degree</label> <br>
+            <input type="checkbox" name="drg"><label>SSC</label>
+            <input type="checkbox" name="drg"><label>HSC</label>
+            <input type="checkbox" name="drg"><label>BSC</label>
+            <br>
+            <br>
+            <br>
+
+
+                        <input type="submit" value="submit" onclick="show()">
+                        <input type="reset">
+        </form>
+    </fieldset>
+
+    <script>
+
+        function show() {
+
+
+            let fn =document.frm.frstnm.value;
+            let ln =document.frm.lstnm.value;
+            let id =document.frm.idnmbr.value;
+            let eml =document.frm.emle.value;
+            let pn =document.frm.nmbr.value;
+            let pass =document.frm.paswrd.value;
+
+
+
+            // fn name 
+
+            if(fn==""){
+                alert("fill first name");
+                return;
+            }
+
+            // ln name 
+
+            if(ln==""){
+                alert("fill the last name");
+                return;
+            }
+
+            // id mauner 
+
+            if(id.length < 7){
+                alert("Enter 7 degit id");
+                return;
+            }
+
+            // email validation 
+
+            if(eml.indexOf ("@")==-1){
+                alert("Missing the @ on email ");
+                return;
+            }
+
+            if(eml.indexOf(".com")==-1){
+                alert("Missing .com on this email");
+                return;
+            }
+
+
+            // phone number validation 
+
+            if(pn.length !=11 ){
+                alert("number must be 11 degite");
+                return;
+            }
+
+            if(!pn.startsWith("01")){
+                alert("number start with 01");
+                return;
+            }
+
+
+            // passoward validatipn 
+
+            if(pass.length <5 ){
+                alert("password must be longer then 5 degit ");
+                return;
+            }
+
+
+            // gender validation 
+
+            let gender = "";
+            let gnder = document.frm.gndr;
+            let gdr = false;
+
+            for(let i=0;i<gnder.length;i++){
+                if(gnder[i].checked){
+                    gender += gnder[i].value;
+                    gdr = true;
+                }
+            }
+
+            if(!gdr){
+                alert("enter gender");
+                return;
+            }
+
+            // degree validation 
+
+            let degree = "";
+            let dgr = document.frm.drg;
+
+            for(let i=0;i<dgr.length;i++){
+                if(dgr[i].checked){
+                    degree += dgr[i].value+ " ";
+                }
+            }
+
+
+
+
+
+
+            // show on new tab
+
+            let store =window.open("","","width=500px,height=500px");
+
+            store.document.write("First Name :"+fn+"<br>");
+
+            store.document.write("<br>");
+            
+            store.document.write("Last Name :"+ln+"<br>");
+
+            store.document.write("<br>");
+            store.document.write("Id :"+id+"<br>");
+
+            store.document.write("<br>");
+            store.document.write("Email :"+eml+"<br>");
+
+            store.document.write("<br>");
+            store.document.write("Phone Number :"+pn+"<br>");
+
+            store.document.write("<br>");
+            store.document.write("Passoward :"+pass+"<br>");
+
+            store.document.write("<br>");
+            store.document.write("Gender :"+gender+"<br>");
+
+            store.document.write("<br>");
+            store.document.write("Gender :"+degree+"<br>");
+
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>
