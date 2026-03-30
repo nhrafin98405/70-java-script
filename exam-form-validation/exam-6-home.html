@@ -48,16 +48,16 @@
             <br>
 
             degree : <br>
-            <input type="checkbox" name="degree" value="SSC"> SSC
-            <input type="checkbox" name="degree" value="HSC"> HSC
-            <input type="checkbox" name="degree" value="MSC"> MSC
+            <input type="checkbox" name="degre" value="SSC"> SSC
+            <input type="checkbox" name="degre" value="HSC"> HSC
+            <input type="checkbox" name="degre" value="MSC"> MSC
             <br>
             <br>
 
             Gender : <br>
-            <input type="radio" name="gender" value="Male">Male
-            <input type="radio" name="gender" value="Female">Female
-            <input type="radio" name="gender" value="Other">Other
+            <input type="radio" name="gnder" value="Male">Male
+            <input type="radio" name="gnder" value="Female">Female
+            <input type="radio" name="gnder" value="Other">Other
 
             <br>
             <br>
@@ -85,7 +85,7 @@
 
             // name validation
 
-             if(nam == ""){
+            if(nam == ""){
                 alert("Fill The Name First");
                 return;
             }
@@ -125,38 +125,38 @@
                 return;
             }
 
-            // checkbox validation
+            // checkbox validation  
 
-            let edu ="";
-            let drg =document.frm.degree;
+            let degree = "";
 
-            for(i = 0 ; i<drg.length; i++){
+            let deg = document.frm.degre;
 
-                if(drg[i].checked){
-                    edu += drg[i].value + " ";
+            for(let i=0;i<deg.length;i++){
+                if(deg[i].checked){
+                    degree += deg[i].value+ " ";
+                    
                 }
             }
 
-           
-            
-            // radio validation 
+            // gender validation 
 
-            let gndr ="";
-            let gdr = document.frm.gender;
-            let select = false;
 
-            for(i =0;i<gdr.length;i++){
+            let gender ="";
+            let gdr = document.frm.gnder;
+            let slt = false;
+
+            for(let i=0;i<gdr.length;i++){
                 if(gdr[i].checked){
-                    gndr += gdr.value;
-                    select = true;
-                   
+                    gender += gdr[i].value;
+                    slt = true;
                 }
             }
 
-            if(!select){
-                alert("select the gender");
+            if(!slt){
+                alert("ENTER THE GENDER");
                 return;
             }
+            
 
 
 
@@ -198,13 +198,11 @@
             
             store.document.write("<br>");
 
-            store.document.write("EDUCATION : "+ edu +"<br>");
-            
+            store.document.write("DEGREE : "+ degree +"<br>");
+
             store.document.write("<br>");
 
-            store.document.write("GENDER : "+ gndr +"<br>");
-            
-            store.document.write("<br>");
+            store.document.write("GENDER : "+ gender +"<br>");
 
         }
     </script>
